@@ -1,0 +1,150 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    padding: 50px;
+}
+.display {
+    display: inline-block;
+    background: #fff;
+}
+.pre {
+    background: url("../img/pre.jpg") no-repeat;
+    height: 11px;
+    width: 11px;
+    border-right: 1px solid #aaa;
+    cursor: pointer;
+}
+.post {
+    background: url("../img/post.jpg") no-repeat;
+    height: 11px;
+    width: 11px;
+    border-left: 1px solid #aaa;
+    cursor: pointer;
+}
+.today{
+    background-color: #FEFBEB;
+}
+.year, .month, .holiday{
+    border: 1px solid #aaa;
+    padding: 4px;
+}
+.time-chooser {
+    background-color: #F3F5FA;
+    padding: 10px;
+    width: 600px;
+}
+.clock{
+    display: inline-block;
+    color: #999;
+    font-size: 10px;
+    margin-left: 40px;
+}
+
+#holiday-chooser, #year-chooser, #month-chooser {
+    border: 0;
+    border: none;
+    cursor: pointer;
+}
+.btn {
+    cursor: pointer;
+    background-color: #F3976C;
+    color: #fff;
+    border: none;
+    padding: 7px;
+}
+
+.calendar-display{
+    margin-top: 10px;
+    width: 620px;
+    position: relative;
+}
+
+table {
+    border-collapse: collapse;
+    border: none;
+}
+td {
+    border:1px solid #F1EBE4 ;
+    width: 60px;
+    text-align: center;
+}
+thead td {
+    height: 30px;
+}
+tbody td {
+    height: 60px;
+    cursor: pointer;
+}
+.rest {
+    display: inline;
+    height: 15px;
+    width: 15px;
+    background-color: #CC0000;
+    color: #fff;
+    font-size: 10px;
+    border-radius: 3px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.norest{
+    display: none;
+}
+.item{
+
+}
+.now-month {
+    position: relative;
+}
+.normal-day {
+    color: #999999;
+}
+.world-day{
+    color: #86A9C0;
+}
+.week-day {
+    color: #C34E43 !important;
+}
+.solar-day {
+    color: #8EB475;
+}
+.holiday-day {
+    color: #C34E43;
+}
+.pre-month, .post-month {
+    background-color: #F7F5F3;
+    color: #C0BEBC;
+    position: relative;
+}
+td span {
+    display: block;
+    margin-top: 5px;
+    font-size: 13px;
+    white-space: nowrap;
+    width: 60px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.calendar-tip{
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 15px;
+    border: 1px solid #F1EBE4;
+}
+.tip-date{
+    color: #CC0000;
+    font-size: 130px;
+    text-align: center;
+}
+.tip-lunar{
+    margin-top: 20px;
+    text-align: center;
+    color: #999;
+    font-size: 10px;
+    line-height: 30px;
+}

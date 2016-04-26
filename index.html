@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="dict/css/main.min.css">
+</head>
+<body>  <!-- id="table_calendar"-->
+        <div class="calender">
+            <div class="time-chooser">
+                <div class="year display">
+                    <div id="year-pre" class="pre display"></div>
+                    <select id="year-chooser">
+                        <option value="1901">1901年</option>
+                    </select>
+                    <div id="year-post" class="post display"></div>
+                </div>
+                <div class="month display">
+                    <div id="month-pre" class="pre display"></div>
+                    <select id="month-chooser">
+                        <option value="1">1月</option>
+                    </select>
+                    <div id="month-post" class="post display"></div>
+                </div>
+                <div class="holiday display">
+                    <select id="holiday-chooser">
+                        <option value="">2016年假日</option>
+                        <option value="元旦">元旦</option>
+                        <option value="春节">春节</option>
+                        <option value="清明">清明节</option>
+                        <option value="劳动">劳动节</option>
+                        <option value="端午">端午节</option>
+                        <option value="中秋">中秋节</option>
+                        <option value="国庆">国庆节</option>
+                    </select>
+                </div>
+                <button id="return" class="btn display">
+                    返回今天
+                </button>
+                <div class="clock">
+                </div>
+            </div>   <!--end time-chooser-->
+            <div class="calendar-display">
+                <div class="calendar-tip">
+                    <span></span>
+                    <div class="tip-lunar">
+                    </div>
+                    <div class="tip-date">
+                    </div>
+                </div>
+                <table id="table_calendar">
+                    <thead style="background-color: #FEFBEB">
+                        <tr>
+                            <td>一</td>
+                            <td>二</td>
+                            <td>三</td>
+                            <td>四</td>
+                            <td>五</td>
+                            <td>六</td>
+                            <td>日</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+
+            </div> <!-- end calendar-display -->
+        </div> <!--end calender-->
+<script>
+    //显示时钟
+    function displayClock(){
+        var now = new Date();
+        var clock = document.getElementsByClassName("clock")[0];
+        var hour = parseInt(now.getHours())<10?"0"+now.getHours():now.getHours();
+        var minutes = parseInt(now.getMinutes())<10?"0"+now.getMinutes():now.getMinutes();
+        var seconds = parseInt(now.getSeconds())<10?"0"+now.getSeconds():now.getSeconds();
+        clock.innerText = "北京时间:"+hour+":"+minutes+":"+seconds;
+        setTimeout("displayClock()",1000);
+    }
+    displayClock();
+</script>
+<script src="dict/js/calendar.min.js"></script>
+</body>
+</html>
