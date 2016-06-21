@@ -80,6 +80,7 @@
             return ((lunarInfo[y - 1900] & (0x10000 >> m)) ? 30 : 29)
         }
 
+        //根据传入日期，计算农历
         function Lunar(nowDate){
             var baseDate = new Date(1900, 0, 31);
             var offtime = (nowDate - baseDate) / 86400000;
@@ -140,6 +141,7 @@
             this.day = offtime + 1;
         }
 
+        //格式化农历显示
         function displayLunarDay(year, month, day){
             var tmpDate = new Date(year,--month,day);
             var luna = new Lunar(tmpDate);
@@ -190,7 +192,7 @@
             return days[month];
         }
 
-//获取该月一号是周几
+        //获取该月一号是周几
         function getStartWeek() {
             var tempnum = day % 7;
             var tmpweek = week + 1; //今天周几
@@ -198,7 +200,7 @@
             return startweek > 7 ? startweek % 7 : startweek;
         }
 
-//计算节气
+        //计算节气
         function getSolarTerm(year, month, day){
             month = month-1;
             var sTermInfo = [0,21208,42467,63836,85337,107014,128867,150921,173149,195551,218072,240693,263343,285989,308563,331033,353350,375494,397447,419210,440795,462224,483532,504758];
@@ -215,6 +217,7 @@
             return solarTerms;
         }
 
+        //根据传来的是这一天的类型，所属年份 月份 日期，返回合适的html语句，选择合适的class
         function getHtml(type, tmpyear, tmpmonth, tmpday){
             var tmplunar = displayLunarDay(tmpyear, tmpmonth, tmpday);
             var title = "";
@@ -222,7 +225,7 @@
             var date = tmpday;
             var classPre = "";
             var classNext = "normal-day";
-            var solarTerm = getSolarTerm(tmpyear, tmpmonth, tmpday)
+            var solarTerm = getSolarTerm(tmpyear, tmpmonth, tmpday);
             if(solarTerm !== ''){
                 tmplunar = solarTerm;
                 classNext = "solar-day";
