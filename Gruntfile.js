@@ -14,7 +14,7 @@ module.exports = function(grunt){
 			},
 			build: {
 				src: 'src/js/calendar.js',
-				dest: 'dict/js/calendar.min.js'
+				dest: 'dist/js/calendar.min.js'
 			}
 		},
 		
@@ -51,7 +51,7 @@ module.exports = function(grunt){
 			  expand: true,
 			  cwd: 'src/css',
 			  src: ['main.css'],
-			  dest: 'dict/css',
+			  dest: 'dist/css',
 			  ext: '.min.css'
 			}]
 		  }
